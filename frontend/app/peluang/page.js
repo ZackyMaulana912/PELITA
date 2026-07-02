@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import PeluangCard from "@/components/PeluangCard";
+import DaftarPeluangFilter from "@/components/DaftarPeluangFilter";
 import { createServerClient } from "@/lib/supabaseServerClient";
 import { hitungStatus } from "@/lib/status";
 import { warnaKategori } from "@/lib/kategoriWarna";
@@ -120,21 +120,8 @@ export default async function HalamanDaftar() {
               Pastikan koneksi ke Supabase sudah dikonfigurasi dengan benar.
             </p>
           </div>
-        ) : terurut.length === 0 ? (
-          <div className="rounded-xl border border-[#E8EDF4] bg-white p-10 text-center">
-            <p className="text-[15px] font-bold text-[#1C2B3A]">
-              Belum ada peluang yang tersedia
-            </p>
-            <p className="mt-1 text-[13.5px] text-[#6B7A90]">
-              Peluang baru akan muncul di sini setelah ditambahkan oleh admin.
-            </p>
-          </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {terurut.map((p) => (
-              <PeluangCard key={p.id} peluang={p} />
-            ))}
-          </div>
+          <DaftarPeluangFilter peluang={terurut} />
         )}
       </div>
 

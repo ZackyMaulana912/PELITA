@@ -54,7 +54,8 @@ Security (RLS) di Postgres, bukan oleh kode di sisi klien.
 
 Sisi publik (tanpa login):
 
-- `/` - Daftar Peluang. Grid kartu berisi seluruh peluang.
+- `/` - Halaman Awal. Dua pilihan peran: Mahasiswa (ke daftar peluang) atau Admin (ke login).
+- `/peluang` - Daftar Peluang. Grid kartu berisi seluruh peluang.
 - `/peluang/[id]` - Detail Peluang beserta panel cara pendaftaran.
 
 Sisi admin (wajib login):
@@ -107,7 +108,9 @@ npm start
 - Status **Aktif** atau **Ditutup** tidak disimpan di database, melainkan
   dihitung otomatis dari tanggal tenggat dibanding tanggal hari ini.
 - Gambar dikompres di sisi klien sebelum diunggah (lebar maksimum 1200px, target
-  ukuran di bawah 500KB) agar kuota Storage tier gratis tidak cepat habis.
+  ukuran di bawah 500KB) agar kuota Storage tier gratis tidak cepat habis. Rasio
+  yang disarankan persegi 1:1; gambar ditampilkan utuh (tidak terpotong) dengan
+  latar blur, jadi rasio apa pun tetap aman.
 
 ## Catatan dan Risiko
 
