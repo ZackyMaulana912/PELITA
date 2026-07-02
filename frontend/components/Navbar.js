@@ -6,7 +6,7 @@ import LogoPelita from "./LogoPelita";
 export default function Navbar() {
   return (
     <nav className="flex h-16 items-center justify-between border-b border-[#E8EDF4] bg-white px-5 sm:px-10">
-      <Link href="/" className="flex items-center gap-[10px]">
+      <Link href="/peluang" className="flex items-center gap-[10px]">
         <LogoPelita size={30} />
         <div>
           <div className="text-[14.5px] font-extrabold leading-[1.1] tracking-[-0.3px] text-navy">

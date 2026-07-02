@@ -42,7 +42,7 @@ export default async function HalamanDetail({ params }) {
 
       <div className="mx-auto max-w-5xl px-5 py-6 sm:px-8">
         <Link
-          href="/"
+          href="/peluang"
           className="mb-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#6B7A90] transition-colors hover:text-navy"
         >
           <svg viewBox="0 0 16 16" className="h-[13px] w-[13px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
