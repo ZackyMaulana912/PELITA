@@ -17,14 +17,25 @@ export default function PeluangCard({ peluang }) {
       href={`/peluang/${peluang.id}`}
       className="group block overflow-hidden rounded-xl bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-card-hover"
     >
-      <div className="relative h-[136px]">
+      <div className="relative aspect-square overflow-hidden bg-[#EEF2F7]">
         {peluang.gambarUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={peluang.gambarUrl}
-            alt={peluang.judul}
-            className="h-full w-full object-cover"
-          />
+          <>
+            {/* Latar blur dari gambar yang sama, mengisi sisi kosong saat
+                gambar bukan lanskap (mis. poster 1:1) tanpa memotong isinya. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={peluang.gambarUrl}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full scale-110 object-cover blur-lg"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={peluang.gambarUrl}
+              alt={peluang.judul}
+              className="relative h-full w-full object-contain"
+            />
+          </>
         ) : (
           <div
             className="flex h-full w-full items-center justify-center"

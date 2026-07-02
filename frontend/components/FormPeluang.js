@@ -273,6 +273,11 @@ export default function FormPeluang({ peluang }) {
               </span>
             </label>
           )}
+          <p className="mt-2 text-[11.5px] leading-[1.5] text-[#9BAAB8]">
+            Disarankan format persegi 1:1 (contoh 1080 x 1080 px). Gambar
+            otomatis dikompres ke lebar maksimum 1200px dan di bawah 500KB, jadi
+            unggahan besar tetap aman.
+          </p>
         </Field>
       </div>
 

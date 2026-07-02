@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import BadgeKategori from "@/components/BadgeKategori";
 import BadgeStatus from "@/components/BadgeStatus";
+import BannerPeluang from "@/components/BannerPeluang";
 import PanelPendaftaran from "@/components/PanelPendaftaran";
 import { IkonGedung } from "@/components/Ikon";
 import { createServerClient } from "@/lib/supabaseServerClient";
@@ -51,28 +52,13 @@ export default async function HalamanDetail({ params }) {
         </Link>
 
         <div className="overflow-hidden rounded-2xl bg-white shadow-panel">
-          {/* Banner */}
-          <div className="relative h-[180px] sm:h-[200px]">
-            {peluang.gambarUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={peluang.gambarUrl}
-                alt={peluang.judul}
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div
-                className="flex h-full w-full items-center justify-center"
-                style={{
-                  background: `repeating-linear-gradient(135deg, ${warna.bg} 0px, ${warna.bg} 18px, ${warna.bg}cc 18px, ${warna.bg}cc 36px)`,
-                }}
-              >
-                <span className="font-mono text-[12px] tracking-[0.05em]" style={{ color: warna.text }}>
-                  {namaKategori || "peluang"}
-                </span>
-              </div>
-            )}
-          </div>
+          {/* Banner: besar mendekati 1:1 saat awal, mengecil saat di-scroll. */}
+          <BannerPeluang
+            gambarUrl={peluang.gambarUrl}
+            judul={peluang.judul}
+            warna={warna}
+            namaKategori={namaKategori}
+          />
 
           {/* Konten */}
           <div className="grid grid-cols-1 gap-8 p-6 sm:p-10 lg:grid-cols-[1fr_300px] lg:items-start">

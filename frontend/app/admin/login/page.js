@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import LogoPelita from "@/components/LogoPelita";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -129,6 +130,16 @@ export default function HalamanLogin() {
             {memproses ? "Memproses..." : "Masuk"}
           </button>
         </form>
+
+        <Link
+          href="/"
+          className="mt-6 flex items-center justify-center gap-[6px] text-[13px] font-semibold text-[#6B7A90] transition-colors hover:text-navy"
+        >
+          <svg viewBox="0 0 16 16" className="h-[13px] w-[13px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 4L6 8l4 4M6 8h8" />
+          </svg>
+          Kembali ke Beranda
+        </Link>
       </div>
     </div>
   );
