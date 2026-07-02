@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Environment variables (jangan pernah di-commit)
+.env
+.env.local
+.env*.local
+
+# Log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistem
+.DS_Store
+
+# Vercel
+.vercel/
+
+# Konfigurasi editor dan tooling lokal
+.vscode/
+.idea/
+.claude/
+
+# Dokumen internal (tidak di-commit)
+CLAUDE.md
+Deployment.md
+PRD.md
