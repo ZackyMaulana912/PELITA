@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f5f6f8;
+  --foreground: #1c2b3a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Menyembunyikan spinner default pada input date agar konsisten lintas browser */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
